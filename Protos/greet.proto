@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "Pascu_Bianca_Lab10";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+ rpc SendStatus (SRequest) returns (SResponse);
+}
+
+// Status request
+message SRequest {
+ int32 no = 1;
+}
+
+// Status response
+message SResponse {
+ repeated StatusInfo StatusInfo = 1;
+}
+
+// Status
+message StatusInfo {
+ string author = 1;
+ string description = 2;
+}
